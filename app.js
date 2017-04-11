@@ -15,6 +15,16 @@ var jadhav = require('./routes/neeraj');
 var index = require('./routes/index');
 var registerForm = require('./routes/registerForm');
 var user = require('./routes/user');
+var quote = require('./routes/quote');
+
+/************
+
+
+
+*************/
+
+
+
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));		//set the app engine and default layout name 'main'
 
@@ -43,6 +53,7 @@ app.use('/user', function(req,res,next){
 	next();
 }, user);
 
+app.use('/quote', quote);
 
 app.use(function(req, res, next){
 	var error = new Error('Not found');
