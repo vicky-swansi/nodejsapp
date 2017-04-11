@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var http = require('http');
 var path = require('path');
 var winston = require('winston');
+var check = false;
 
 var app = express();
 
@@ -33,7 +34,13 @@ app.use('/page1', page1);
 app.use('/page2', jadhav);
 app.use('/', index);
 app.use('/register', registerForm);
-app.use('/user', user);
+app.use('/user', function(req,res,next){
+	if(!check){
+		res.sendStatus(404);
+		return;
+	}
+	next();
+}, user);
 
 
 app.use(function(req, res, next){
