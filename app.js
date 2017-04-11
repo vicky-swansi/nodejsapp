@@ -13,6 +13,7 @@ var page1 = require('./routes/page1');
 var jadhav = require('./routes/neeraj');
 var index = require('./routes/index');
 var registerForm = require('./routes/registerForm');
+var user = require('./routes/user');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));		//set the app engine and default layout name 'main'
 
@@ -32,6 +33,7 @@ app.use('/page1', page1);
 app.use('/page2', jadhav);
 app.use('/', index);
 app.use('/register', registerForm);
+app.use('/user', user);
 
 
 app.use(function(req, res, next){
