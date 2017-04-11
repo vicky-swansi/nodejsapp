@@ -20,7 +20,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));		//set the app engine
 app.set('port', process.env.PORT || 8000);						//set port to either environment port OR 8080
 app.set('views', path.join(__dirname, 'views')); 				//by default, express expects its template files to be in the views folder. In case you have a different path, you can update it here.
 app.set('view engine', 'handlebars');							//define the view engine
-
+app.set('author','vivek')
 //app.use
 app.use(express.static(path.join(__dirname, 'public')));		//declares the location of static resources (css, js ,images)
 
