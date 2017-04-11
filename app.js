@@ -35,7 +35,8 @@ app.use('/page2', jadhav);
 app.use('/', index);
 app.use('/register', registerForm);
 app.use('/user', function(req,res,next){
-	if(!check){
+	console.log(req.hostname);
+	if(!check && req.hostname=='localhost'){
 		res.sendStatus(404);
 		return;
 	}
