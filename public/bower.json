@@ -1,0 +1,17 @@
+{
+  "name": "nodejs_sample_app",
+  "description": "bower dependencies",
+  "main": "app.js",
+  "authors": [
+    "vivek"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/vicky-swansi/nodejsapp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
