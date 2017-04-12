@@ -11,6 +11,18 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#getNews_handlebars").click(function(){
+		var source = $("#newshandlebars-select").val();
+		if(source==undefined || source==''){
+			alert("please select the source");
+		}
+		else{
+			getNewsArticle(source);
+		}
+	});
+	
+	
+
 	getNewsList();	
 });
 

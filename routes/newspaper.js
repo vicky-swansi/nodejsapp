@@ -3,10 +3,40 @@ var router = express.Router();
 var request = require('request');
 
 router.get('/', function(req, res){
-	res.render('news-paper', {
-		layout : 'layout2',
-		title: 'news'
-	});
+
+    var options = {
+    url: 'https://newsapi.org/v1/sources?language=en',
+    method : 'get'
+    };
+
+    request(options, processNewsList);
+
+    function processNewsList(error, response, body){
+
+        if(!error && response.statusCode==200){
+
+            var newSources = JSON.parse(body).sources;
+            var newsArray = [];
+
+            for(var i=0;i<newSources.length;i++){
+                newsArray.push(new news(newSources[i].id, newSources[i].name, newSources[i].urlsToLogos.small));
+            }
+
+            res.render('news-paper', {
+                layout : 'layout2',
+                title: 'news',
+                newsSources: newsArray
+            });
+        }
+    }
+
+    function news(id, name, image){
+        this.id = id;
+        this.name = name;
+        this.image = image;
+    }
+
+	
 });
 
 router.post('/api/newsArticle', function(req, res){

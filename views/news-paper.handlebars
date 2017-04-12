@@ -1,5 +1,20 @@
 
 <div class="row">
+	<p>handlebar loop</p>		
+	<div class="form-group col-md-6">
+		<select class="form-control" id="newshandlebars-select">
+			<option value="">Select news</option>
+			{{#each newsSources}}
+			<option value="{{this.id}}">{{this.name}}</option>
+			{{/each}}
+		</select>
+	</div>
+	<div class="form-group col-md-6">
+		<button type="button" id="getNews_handlebars" class="btn btn-primary">Get News</button> 
+	</div>
+	
+	<div class="clearfix"></div>
+	<p>Jquery loop</p>
 	<div class="form-group col-md-6">
 		<select class="form-control" id="news-select">
 			<option value="">Select news</option>
