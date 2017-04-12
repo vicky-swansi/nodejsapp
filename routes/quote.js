@@ -16,7 +16,7 @@ router.post('/getQuote', function(req, res){
     url: 'https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous',
     method : 'get',
         headers: {
-        'X-Mashape-Key': 'Wz5nfbQnxSmshER9OVSIWfXvdHWmp1CTXIUjsntop4Pu5mQdNE',
+        'X-Mashape-Key': process.env.MASH_KEY,
         'Content-Type' : 'application/x-www-form-urlencoded',
         'Accept' : 'application/json'
         }
