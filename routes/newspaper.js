@@ -12,7 +12,7 @@ router.get('/', function(req, res){
 router.post('/api/newsArticle', function(req, res){
 	
 	var source = req.body.source;
-	var url = 'https://newsapi.org/v1/articles?source=' +source+ '&apiKey=' +process.env.NEWS_API_KEY+ ';
+	var url = 'https://newsapi.org/v1/articles?source=' +source+ '&apiKey=fd97fccd2fa14e42860647110afc8bf9';
 	
 	var options = {
     	url: url,
