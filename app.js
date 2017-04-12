@@ -16,6 +16,7 @@ var index = require('./routes/index');
 var registerForm = require('./routes/registerForm');
 var user = require('./routes/user');
 var quote = require('./routes/quote');
+var news = require('./routes/newspaper');
 
 /************
 
@@ -52,6 +53,8 @@ app.use('/user', function(req,res,next){
 	}
 	next();
 }, user);
+
+app.use('/news', news);
 
 app.use('/quote', quote);
 
